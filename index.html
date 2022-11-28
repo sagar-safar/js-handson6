@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+  <h1>handson 6</h1>
+    <fieldset>Find the Smaller Angle
+      PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.</fieldset>
+
+    <pre>
+      var min = (a,b)=>{
+        if(a>b) return b
+        return a;
+      }
+      
+      
+      var Minimal_Angle = (h, m) => 
+      {
+        min_angle = m*6;
+        hour_angle = h*30+(15*min_angle)/180;
+        angle = Math.abs(hour_angle-min_angle);
+        return min(angle,360-angle)
+        
+        
+       
+             
+      };
+    </pre>
+
+    <fieldset>Check whether the year is Leap year or not.
+      Write a program which takes an year 
+      N
+       as input from the user and find out whether the given year is a Leap Year or not.</fieldset>
+
+    <pre>
+      var Check_Leap = (year) => 
+      {
+      
+        if(year%4===0){
+          if(year%100===0){
+            if(year%400===0){
+              return "Leap Year"
+              
+            }
+            else{
+              return "Non Leap Year"
+            }
+            
+          }
+          else{
+            return "Leap Year"
+          }
+        }
+        
+        else{
+          return "Non Leap Year"
+        }
+
+      };
+  
+    </pre>
+    <fieldset>Perfect Number Check.
+      Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.
+      
+      Now, You are given an integer 
+      N
+      , write a program to check whether the given number is a Perfect Number or not.</fieldset>
+
+    <pre>
+      var Perfect_Check = (N) => 
+      {
+        sum = 1;
+        if(N===1){
+          return "YES"
+        }
+        else if(N%2===1){
+          return "NO"
+        }
+        else{
+          
+          for(let i=2;i*i<=N;i++){
+            if(N%i===0){
+              sum += i+N/i
+            }
+          }
+          
+          return sum===N?"YES":"NO"
+        }
+    </pre>
+
+    <fieldset>Reverse a Number.
+      Write a program which takes a numebr 
+      N
+       as input from the user and You need to reverse the number.</fieldset>
+    <pre>
+      var Reverse_Number = (N) => 
+      {
+        rev = 0
+        while(N>0){
+          r = N%10;
+          rev = rev*10+r
+          N = parseInt(N/10);
+          
+        }
+        return rev
+
+      };
+
+    </pre>
+
+    <fieldset>Substring Check.
+      You are given two strings 
+      S
+      1
+       and 
+      S
+      2
+      , you need to check whether the string S1 is a substring of string S2 or not.</fieldset>
+    <pre>
+      var Substring_Check = (S1, S2) => 
+      {
+        const arr = S1.split(" ")
+        for(let i=0;i<arr.length;i++){
+          if(arr[i]===S2){
+            return "YES"
+          }
+        }
+        return "NO"
+          
+      };
+
+
+    </pre>
+</body>
+</html>
